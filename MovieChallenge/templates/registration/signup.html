@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>アカウント作成</title>
+</head>
+<body>
+    <div class="container">
+        <h2>アカウント作成</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">アカウント作成</button>
+        </form>
+        <a href="{% url 'login' %}">ログイン画面に戻る</a>
+    </div>
+</body>
+</html>
