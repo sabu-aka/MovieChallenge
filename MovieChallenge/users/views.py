@@ -4,6 +4,9 @@ from django.contrib.auth import login
 from django.urls import reverse_lazy
 from django.views import View
 
+def home(request):
+    return render(request, 'users/home.html')
+
 class SignupView(View):
     def get(self, request):
         form = UserCreationForm()
